@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/kehoach_menu1"
+        android:title="Lập kế hoạch"
+        android:icon="@drawable/ic_plant_ic2"/>
+    <item
+        android:title="Sự kiện"
+        android:icon="@drawable/ic_calendar"
+        android:id="@+id/kehoach_menu2"/>
+    <item
+        android:title="Giao dịch định kì"
+        android:id="@+id/kehoach_menu3"
+        android:icon="@drawable/ic_money_transaction"/>
+    <item
+        android:title="Hoá đơn"
+        android:id="@+id/kehoach_menu4"
+        android:icon="@drawable/ic_invoice"/>
+</menu>

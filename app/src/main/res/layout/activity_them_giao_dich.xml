@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThemGiaoDich">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="162dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_salary" />
+
+                <EditText
+                    android:id="@+id/txt_so_tien"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:ems="10"
+                    android:hint="Nhập số tiền"
+                    android:inputType="number"
+                    android:paddingLeft="10dp"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_juggling_ball" />
+
+                <EditText
+                    android:id="@+id/txt_nhom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:ems="10"
+                    android:hint="Chọn nhóm"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_post_it" />
+
+                <EditText
+                    android:id="@+id/txt_ghi_chu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:ems="10"
+                    android:hint="Ghi chú"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_clock" />
+
+                <EditText
+                    android:id="@+id/txt_thoi_gian"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:ems="10"
+                    android:hint="Thời gian"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_purse" />
+
+                <EditText
+                    android:id="@+id/txt_vi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:ems="10"
+                    android:hint="Chọn ví"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnThemGiaoDich"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thêm giao dịch" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

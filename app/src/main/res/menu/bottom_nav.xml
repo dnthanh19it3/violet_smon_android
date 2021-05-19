@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_so_giao_dich"
+        android:icon="@drawable/ic_wallet"
+        android:title="@string/so_giao_dich" />
+    <item
+        android:id="@+id/nav_bao_cao"
+        android:icon="@drawable/ic_pie_chart"
+        android:title="@string/bao_cao" />
+    <item
+        android:id="@+id/nav_lap_ke_hoach"
+        android:icon="@drawable/ic_plant"
+        android:title="@string/lap_ke_hoach" />
+    <item
+        android:id="@+id/nav_tai_khoan"
+        android:icon="@drawable/ic_user"
+        android:title="@string/tai_khoan" />
+</menu>

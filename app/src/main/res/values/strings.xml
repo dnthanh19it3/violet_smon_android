@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">sMon</string>
+    <string name="title_activity_splash_screen">splash_screen</string>
+    <string name="facebook_app_id">943731789694904</string>
+    <string name="fb_login_protocol_scheme">fb943731789694904</string>
+
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="splash_text">sMoney</string>
+    <string name="splash_text_copyright">by Violet - 2020</string>
+    <!--Bottom Menu String-->
+    <string name="so_giao_dich">Sổ giao dịch</string>
+    <string name="bao_cao">Báo cáo</string>
+    <string name="lap_ke_hoach">Lập kế hoạch</string>
+    <string name="tai_khoan">Tài khoản</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lapkehoach_title">Lập kế hoạch</string>
+</resources>

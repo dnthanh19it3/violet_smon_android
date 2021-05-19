@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/SplashTheme"
+    tools:context=".SplashScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="164dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Splash Logo"
+            android:padding="30dp"
+            app:srcCompat="@drawable/ic_wallet__1_" />
+        <TextView
+            android:id="@+id/splash_appname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sMon"
+            android:textColor="@android:color/black"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingBottom="30px"/>
+        <TextView
+            android:id="@+id/splash_credit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="by Violet"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
