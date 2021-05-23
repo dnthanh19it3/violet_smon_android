@@ -30,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     private  boolean loginFlag = false;
-    public static int user_id = 1;
+    public static int user_id = 0;
+    public  static  int account_id = 0;
+    Intent intentLogin, splashIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         // Find view
 
@@ -45,12 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-        bottomNav.setOutlineProvider(new ViewOutlineProvider() {
-            @Override
-            public void getOutline(View view, Outline outline) {
-                outline.setRect(100, 100, view.getWidth(), view.getHeight());
-            }
-        });
 
 
 

@@ -1,5 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frame_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -27,7 +28,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/lb_danh_muc"
+                android:id="@+id/lb_vi_xem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Đá po`"

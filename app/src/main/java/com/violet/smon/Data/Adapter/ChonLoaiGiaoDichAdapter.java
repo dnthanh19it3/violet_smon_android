@@ -2,6 +2,7 @@ package com.violet.smon.Data.Adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,6 @@ public class ChonLoaiGiaoDichAdapter extends  RecyclerView.Adapter<ChonLoaiGiaoD
                 returnIntent.putExtra("LOAI_GIAO_DICH_TEXT", changeTypeThu.get(position).getName());
                 returnIntent.putExtra("LOAI_GIAO_DICH_KEY", changeTypeThu.get(position).getId());
                 returnIntent.putExtra("TRANSACTION_TYPE", changeTypeThu.get(position).getMethod());
-
                 activity.setResult(1, returnIntent);
                 activity.finish();
             }

@@ -25,6 +25,8 @@ import com.violet.smon.Data.Model.User_details;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -41,12 +43,12 @@ import retrofit2.Response;
  */
 public class SoGiaoDichFragment extends Fragment {
     //Init var
-    String user_id = "1";
+//    String user_id = "1";
+    int account_id = 1;
     //Define View
     ImageButton buttonAddTrans;
     TextView text_so_du_vi, text_khoan_thu, text_khoan_chi, text_hieu_so;
     RecyclerView recy_each_days;
-    int account_id = 1;
     public ArrayList<Integer> array_month_list = new ArrayList<Integer>();
     public List<TransactionGetResponse> transactionGetResponseList;
     //Define
@@ -116,7 +118,7 @@ public class SoGiaoDichFragment extends Fragment {
         recy_each_days = v.findViewById(R.id.recy_trans_each_day);
 
         themGiaDichIntent= new Intent(this.getContext(), ThemGiaoDich.class);
-
+//        themGiaDichIntent= new Intent(this.getContext(), MainActivity2.class);
         LayoutInflater layoutInflater = LayoutInflater.from(v.getContext());
         renderTab(tabLayout);
 
@@ -153,11 +155,12 @@ public class SoGiaoDichFragment extends Fragment {
 
 
     public void renderEachDays(int month){
-        LaravelApi.laravelApi.getTransactionByMonth(1,1, month).enqueue(new Callback<List<TransactionEachDayResponse>>() {
+        Log.e("Debug giao dich", String.valueOf(MainActivity.account_id));
+        LaravelApi.laravelApi.getTransactionByMonth(MainActivity.user_id, MainActivity.account_id, month).enqueue(new Callback<List<TransactionEachDayResponse>>() {
             @Override
             public void onResponse(Call<List<TransactionEachDayResponse>> call, Response<List<TransactionEachDayResponse>> response) {
+                Log.e("Debug giao dich", response.toString());
                 List<TransactionEachDayResponse> transactionEachDayResponses = response.body();
-                Log.e("Check Object Data", transactionEachDayResponses.get(0).getData().get(0).getName().toString());
                 TransactionEachDayAdapter transactionEachDayAdapter = new TransactionEachDayAdapter(transactionEachDayResponses, SoGiaoDichFragment.this.getContext());
                 LinearLayoutManager linearLayout = new LinearLayoutManager(SoGiaoDichFragment.this.getContext());
 
@@ -175,12 +178,11 @@ public class SoGiaoDichFragment extends Fragment {
     }
 
     public void renderTab(TabLayout tabLayout) {
-        LaravelApi.laravelApi.getAllTransaction(MainActivity.user_id, account_id).enqueue(new Callback<List<TransactionGetResponse>>() {
+        LaravelApi.laravelApi.getAllTransaction(MainActivity.user_id, MainActivity.account_id).enqueue(new Callback<List<TransactionGetResponse>>() {
             @Override
             public void onResponse(Call<List<TransactionGetResponse>> call, Response<List<TransactionGetResponse>> response) {
                 List<TransactionGetResponse> transactionGetResponses = response.body();
                 transactionGetResponseList = transactionGetResponses;
-                Log.e("All Transaction", String.valueOf(transactionGetResponses));
                 DateFormat dateFormat = new SimpleDateFormat("MM");
                 Date date = new Date();
                 int thismonth = Integer.parseInt(dateFormat.format(date));
@@ -197,10 +199,10 @@ public class SoGiaoDichFragment extends Fragment {
                     } else {
                         tabLayout.addTab(tabLayout.newTab().setText("Tháng "+monthnum));
                     }
-
-
                     array_month_list.add(transactionGetResponses.get(i).getMonth());
                 }
+
+                tabLayout.getTabAt(array_month_list.indexOf(thismonth)).select();
             }
 
             @Override
@@ -213,7 +215,7 @@ public class SoGiaoDichFragment extends Fragment {
     }
 
     public void loadWallet() {
-        LaravelApi.laravelApi.getAllWallet(user_id).enqueue(new Callback<Account>() {
+        LaravelApi.laravelApi.getAllWallet(MainActivity.user_id).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 Account account = response.body();

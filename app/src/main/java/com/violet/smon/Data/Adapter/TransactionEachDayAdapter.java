@@ -51,8 +51,10 @@ public class TransactionEachDayAdapter extends RecyclerView.Adapter<TransactionE
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        holder.lb_so_tien.setText(transEachDays.get(position).getFormattedDiffrence());
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-        RecyTransItem recyTransItem = new RecyTransItem(transEachDays.get(position).getData());
+        RecyTransItem recyTransItem = new RecyTransItem(transEachDays.get(position).getData(), context);
         holder.recyclerView.setAdapter(recyTransItem);
         holder.recyclerView.setLayoutManager(linearLayoutManager);
     }
@@ -63,14 +65,16 @@ public class TransactionEachDayAdapter extends RecyclerView.Adapter<TransactionE
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView lb_thu, lb_ngay, lb_thang_nam;
+        TextView lb_thu, lb_ngay, lb_thang_nam, lb_so_tien;
         RecyclerView recyclerView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             lb_thu = itemView.findViewById(R.id.lb_thu);
             lb_ngay = itemView.findViewById(R.id.lb_ngay);
             lb_thang_nam = itemView.findViewById(R.id.lb_thang_ngay);
+            lb_so_tien = itemView.findViewById(R.id.lb_so_tien);
             recyclerView = itemView.findViewById(R.id.recy_trans_item);
+
         }
     }
 }
