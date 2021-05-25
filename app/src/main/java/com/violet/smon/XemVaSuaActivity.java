@@ -5,21 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class XemVaSuaActivity extends AppCompatActivity {
 
     String so_tien, danh_muc, ghi_chu, thoi_gian, vi, dia_diem, voi_ai, thoi_gian_raw;
-    int so_tien_raw, danh_muc_raw, transaction_id, account_id;
+    int so_tien_raw, danh_muc_raw, transaction_id, account_id, cate_id;
+    int iconList[];
 
     TextView lb_so_tien, lb_danh_muc, lb_ghi_chu, lb_thoi_gian, lb_vi, lb_dia_diem, lb_voi_ai;
+    ImageView icon;
     int type, transaction_type;
     FrameLayout frameLayout;
     ImageButton btn_back, btn_sua_giao_dich;
@@ -30,7 +32,8 @@ public class XemVaSuaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xem_va_sua);
         getSupportActionBar().hide();
-
+        initIconList();
+        initView();
 
         // Get var from last intent
         so_tien = getIntent().getStringExtra("EX_SO_TIEN");
@@ -48,18 +51,9 @@ public class XemVaSuaActivity extends AppCompatActivity {
         account_id = getIntent().getIntExtra("EX_ACCOUNT_ID", 1);
         transaction_type = getIntent().getIntExtra("EX_TRANSACTION_TYPE", 1);
         thoi_gian_raw = getIntent().getStringExtra("EX_THOI_GIAN_RAW");
+        cate_id = getIntent().getIntExtra("EX_CATE_ID", 1);
 
-        //Get item view
-        lb_so_tien = findViewById(R.id.lb_so_tien_xem);
-        lb_danh_muc = findViewById(R.id.lb_danh_muc_xem);
-        lb_ghi_chu = findViewById(R.id.lb_ghi_chu_xem);
-        lb_thoi_gian = findViewById(R.id.lb_thoi_gian_xem);
-        lb_vi = findViewById(R.id.lb_vi_xem);
-        lb_dia_diem = findViewById(R.id.lb_dia_diem_xem);
-        lb_voi_ai = findViewById(R.id.lb_voi_ai_xem);
-        frameLayout = findViewById(R.id.frame_thu_chi);
-        btn_back = findViewById(R.id.btn_back);
-        btn_sua_giao_dich = findViewById(R.id.btn_cap_nhat_giao_dich);
+
         //Set text
         lb_so_tien.setText(so_tien);
         lb_danh_muc.setText(danh_muc);
@@ -68,6 +62,7 @@ public class XemVaSuaActivity extends AppCompatActivity {
         lb_vi.setText(vi);
         lb_dia_diem.setText(dia_diem);
         lb_voi_ai.setText(voi_ai);
+        icon.setImageDrawable(getDrawable(iconList[cate_id]));
 
         if (type == 1) {
             frameLayout.setBackground(ContextCompat.getDrawable(this, R.drawable.bg_gra_thu));
@@ -115,6 +110,24 @@ public class XemVaSuaActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+    void initIconList(){
+        int iconList[] = {R.drawable.ct_khac, R.drawable.ct_giaoduc, R.drawable.ct_anuong, R.drawable.ct_hoadon, R.drawable.ic_dichuyen, R.drawable.ct_banbe, R.drawable.ct_giaitri, R.drawable.ct_dulich, R.drawable.ct_suckhoe, R.drawable.ct_quatang, R.drawable.ct_giadinh, R.drawable.ct_dautu, R.drawable.ic_teamwork, R.drawable.ct_kinhdoanh, R.drawable.ct_thuong, R.drawable.ct_tienlai, R.drawable.ct_luong, R.drawable.ct_quatang, R.drawable.ct_bando, R.drawable.ct_thunhapkhac, R.drawable.ct_khac, R.drawable.ct_khac, R.drawable.ct_khac,  R.drawable.ct_khac};
+        this.iconList = iconList;
+    }
+    void initView(){
+        //Get item view
+        lb_so_tien = findViewById(R.id.lb_so_tien_xem);
+        lb_danh_muc = findViewById(R.id.lb_danh_muc_xem);
+        lb_ghi_chu = findViewById(R.id.lb_ghi_chu_xem);
+        lb_thoi_gian = findViewById(R.id.lb_thoi_gian_xem);
+        lb_vi = findViewById(R.id.lb_vi_xem);
+        lb_dia_diem = findViewById(R.id.lb_dia_diem_xem);
+        lb_voi_ai = findViewById(R.id.lb_voi_ai_xem);
+        frameLayout = findViewById(R.id.frame_thu_chi);
+        btn_back = findViewById(R.id.btn_back);
+        btn_sua_giao_dich = findViewById(R.id.btn_cap_nhat_giao_dich);
+        icon = findViewById(R.id.img_icon);
     }
 
 

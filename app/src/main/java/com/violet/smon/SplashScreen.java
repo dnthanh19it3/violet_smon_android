@@ -53,6 +53,7 @@ public class SplashScreen extends AppCompatActivity {
                     MainActivity.user_id = authResponse.getUser_data().getId();
                     MainActivity.account_id = authResponse.getWallet_data().getId();
                     Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+//                    Intent intent =  new Intent(SplashScreen.this, MainActivity2.class);
                     SplashScreen.this.startActivity(intent);
                     SplashScreen.this.finish();
                 } else {

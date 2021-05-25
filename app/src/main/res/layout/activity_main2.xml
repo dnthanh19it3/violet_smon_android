@@ -6,4 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <com.anychart.AnyChartView
+        android:id="@+id/any_chart_view"
+        android:layout_width="253dp"
+        android:layout_height="237dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

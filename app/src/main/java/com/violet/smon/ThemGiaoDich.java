@@ -89,15 +89,22 @@ public class ThemGiaoDich extends AppCompatActivity implements DatePickerDialog.
         btn_them_giao_dich.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ammount = Integer.parseInt(String.valueOf(txt_so_tien.getText()));
-                ghichu = String.valueOf(txt_ghi_chu.getText());
-                dia_diem = String.valueOf(txt_dia_diem.getText());
-                voi_ai = String.valueOf(txt_voi_ai.getText());
-                if(ammount == 0){
-                    Toast.makeText(ThemGiaoDich.this, "Vui lòng nhập thông tin!", Toast.LENGTH_LONG).show();
-                } else {
+                if(txt_so_tien.getText().length() > 0 ){
+                    ammount = Integer.parseInt(String.valueOf(txt_so_tien.getText()));
+                    ghichu = String.valueOf(txt_ghi_chu.getText());
+                    dia_diem = String.valueOf(txt_dia_diem.getText());
+                    voi_ai = String.valueOf(txt_voi_ai.getText());
                     addTransactiom(MainActivity.user_id, transaction_type, MainActivity.account_id, loai_giao_dich_key, ammount, ghichu, thoi_gian, voi_ai, dia_diem);
+                } else {
+                    Toast.makeText(ThemGiaoDich.this, "Vui lòng nhập thông tin!", Toast.LENGTH_LONG).show();
                 }
+
+
+//                if(ammount == 0){
+//                    Toast.makeText(ThemGiaoDich.this, "Vui lòng nhập thông tin!", Toast.LENGTH_LONG).show();
+//                } else {
+//
+//                }
 //                Log.e("Debug", String.format("Uid %s Wallet %s TransactionType %d", MainActivity.user_id, MainActivity.account_id, transaction_type));
 
             }

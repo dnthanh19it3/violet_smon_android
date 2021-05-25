@@ -112,9 +112,6 @@ public class SoGiaoDichFragment extends Fragment {
         buttonAddTrans = v.findViewById(R.id.btn_addtrans);
         tabLayout = v.findViewById(R.id.tab_thuchi);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-//        text_khoan_thu = v.findViewById(R.id.txt_khoang_thu);
-//        text_khoan_chi = v.findViewById(R.id.txt_khoang_chi);
-//        text_hieu_so = v.findViewById(R.id.txt_hieuso);
         recy_each_days = v.findViewById(R.id.recy_trans_each_day);
 
         themGiaDichIntent= new Intent(this.getContext(), ThemGiaoDich.class);
@@ -129,12 +126,7 @@ public class SoGiaoDichFragment extends Fragment {
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             public void onTabSelected(TabLayout.Tab tab) {
-//                text_khoan_thu.setText(transactionGetResponseList.get(tab.getPosition()).getFormattedIncom());
-//                text_khoan_chi.setText(transactionGetResponseList.get(tab.getPosition()).getFormattedOutgo());
-//                text_hieu_so.setText(transactionGetResponseList.get(tab.getPosition()).getFormattedDiffrence());
                 renderEachDays(transactionGetResponseList.get(tab.getPosition()).getMonth());
-
-
             }
             public void onTabUnselected(TabLayout.Tab tab) {}
             public void onTabReselected(TabLayout.Tab tab) {}
@@ -207,7 +199,7 @@ public class SoGiaoDichFragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<TransactionGetResponse>> call, Throwable t) {
-
+                Log.e("Loi so giao dich Retrofit", t.toString());
             }
         });
 
