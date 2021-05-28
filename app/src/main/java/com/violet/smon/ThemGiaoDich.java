@@ -63,10 +63,8 @@ public class ThemGiaoDich extends AppCompatActivity implements DatePickerDialog.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_giao_dich);
-        ActionBar actionBar = getSupportActionBar();
         // Location Services
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        actionBar.hide();
         // Innit view
         initView();
         // Disable Input
@@ -98,15 +96,6 @@ public class ThemGiaoDich extends AppCompatActivity implements DatePickerDialog.
                 } else {
                     Toast.makeText(ThemGiaoDich.this, "Vui lòng nhập thông tin!", Toast.LENGTH_LONG).show();
                 }
-
-
-//                if(ammount == 0){
-//                    Toast.makeText(ThemGiaoDich.this, "Vui lòng nhập thông tin!", Toast.LENGTH_LONG).show();
-//                } else {
-//
-//                }
-//                Log.e("Debug", String.format("Uid %s Wallet %s TransactionType %d", MainActivity.user_id, MainActivity.account_id, transaction_type));
-
             }
         });
         btn_back.setOnClickListener(new View.OnClickListener() {
@@ -215,7 +204,7 @@ public class ThemGiaoDich extends AppCompatActivity implements DatePickerDialog.
         txt_vi = findViewById(R.id.txt_vi);
         txt_dia_diem = findViewById(R.id.txt_dia_diem);
         txt_voi_ai = findViewById(R.id.txt_cung_voi);
-        btn_them_giao_dich = findViewById(R.id.btn_cap_nhat_giao_dich);
+        btn_them_giao_dich = findViewById(R.id.btn_hs_sua);
         btn_back = findViewById(R.id.btn_back);
         btn_get_local = findViewById(R.id.btn_get_local);
     }

@@ -41,7 +41,7 @@
                 android:layout_gravity="center_vertical"/>
 
             <ImageButton
-                android:id="@+id/btn_cap_nhat_giao_dich"
+                android:id="@+id/btn_hs_sua"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="10dp"

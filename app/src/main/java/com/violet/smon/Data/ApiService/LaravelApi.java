@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.violet.smon.Data.Model.Account;
 import com.violet.smon.Data.Model.AuthResponse;
 import com.violet.smon.Data.Model.Change_type;
+import com.violet.smon.Data.Model.Profile;
 import com.violet.smon.Data.Model.ReportResponse;
 import com.violet.smon.Data.Model.SimpleResponse;
 import com.violet.smon.Data.Model.TransactionEachDayResponse;
@@ -84,6 +85,15 @@ public interface LaravelApi {
     Call<AuthResponse> loginOld(@Query("id") int id, @Query("token") String token);
     @GET("/api/auth/register")
     Call<AuthResponse> register(@Query("username") String username, @Query("password") String password);
+    @GET("/api/auth/logout/{user_id}")
+    Call<SimpleResponse> logout(@Path("user_id") int user_id);
+
+
     @GET("/api/{user_id}/report/{account_id}/{month}")
     Call<ReportResponse> getReport(@Path("user_id") int user_id, @Path("account_id") int account_id, @Path("month") int month);
+    // Account
+    @GET("/api/{user_id}/profile/get")
+    Call<Profile> getProfile(@Path("user_id") int user_id);
+    @GET("/api/{user_id}/profile/edit")
+    Call<SimpleResponse> editProfile(@Path("user_id") int user_id, @Query("display_name") String name, @Query("dob") String dob, @Query("gender") String gender);
 }

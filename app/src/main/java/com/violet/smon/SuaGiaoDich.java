@@ -48,7 +48,6 @@ public class SuaGiaoDich extends AppCompatActivity implements DatePickerDialog.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sua_giao_dich);
-        getSupportActionBar().hide();
 
         // Find view
         txt_ghi_chu = findViewById(R.id.txt_ghi_chu);
@@ -58,7 +57,7 @@ public class SuaGiaoDich extends AppCompatActivity implements DatePickerDialog.O
         txt_vi = findViewById(R.id.txt_vi);
         txt_dia_diem = findViewById(R.id.txt_dia_diem);
         txt_voi_ai = findViewById(R.id.txt_cung_voi);
-        btn_cap_nhat_giao_dich = findViewById(R.id.btn_cap_nhat_giao_dich);
+        btn_cap_nhat_giao_dich = findViewById(R.id.btn_hs_sua);
         btn_back = findViewById(R.id.btn_back);
         btn_get_local = findViewById(R.id.btn_get_local);
 
@@ -164,7 +163,6 @@ public class SuaGiaoDich extends AppCompatActivity implements DatePickerDialog.O
                     txt_so_tien.setTextColor(Color.rgb(255, 68, 68));
                 }
                 txt_nhom.setText(data.getStringExtra("LOAI_GIAO_DICH_TEXT"));
-
             }
         }
     }

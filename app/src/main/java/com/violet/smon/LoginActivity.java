@@ -1,11 +1,7 @@
 package com.violet.smon;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,26 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.appevents.AppEventsLogger;
-import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.violet.smon.Data.ApiService.LaravelApi;
-import com.violet.smon.Data.DAO.AuthDAO;
 import com.violet.smon.Data.DAO.AuthDatabase;
 import com.violet.smon.Data.Model.AuthData;
 import com.violet.smon.Data.Model.AuthResponse;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -53,8 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
         initView();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +59,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void initView(){
-        txt_username = findViewById(R.id.txt_username);
-        txt_password = findViewById(R.id.txt_password);
+        txt_username = findViewById(R.id.txt_name);
+        txt_password = findViewById(R.id.txt_gender);
         btnLogin = findViewById(R.id.btn_login);
         btnReg = findViewById(R.id.btn_reg);
     }

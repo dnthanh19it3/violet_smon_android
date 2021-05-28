@@ -9,10 +9,6 @@
         android:icon="@drawable/ic_pie_chart"
         android:title="@string/bao_cao" />
     <item
-        android:id="@+id/nav_lap_ke_hoach"
-        android:icon="@drawable/ic_plant"
-        android:title="@string/lap_ke_hoach" />
-    <item
         android:id="@+id/nav_tai_khoan"
         android:icon="@drawable/ic_user"
         android:title="@string/tai_khoan" />

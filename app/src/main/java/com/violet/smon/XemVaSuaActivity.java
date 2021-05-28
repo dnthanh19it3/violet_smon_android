@@ -31,7 +31,6 @@ public class XemVaSuaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xem_va_sua);
-        getSupportActionBar().hide();
         initIconList();
         initView();
 
@@ -126,7 +125,7 @@ public class XemVaSuaActivity extends AppCompatActivity {
         lb_voi_ai = findViewById(R.id.lb_voi_ai_xem);
         frameLayout = findViewById(R.id.frame_thu_chi);
         btn_back = findViewById(R.id.btn_back);
-        btn_sua_giao_dich = findViewById(R.id.btn_cap_nhat_giao_dich);
+        btn_sua_giao_dich = findViewById(R.id.btn_hs_sua);
         icon = findViewById(R.id.img_icon);
     }
 

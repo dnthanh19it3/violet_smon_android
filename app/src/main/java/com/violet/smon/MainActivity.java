@@ -26,9 +26,6 @@ import retrofit2.Response;
 import retrofit2.http.Path;
 
 public class MainActivity extends AppCompatActivity {
-
-
-
     private  boolean loginFlag = false;
     public static int user_id = 0;
     public  static  int account_id = 0;
@@ -68,11 +65,8 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_bao_cao:
                             selectedFragment = new BaoCaoFragment();
                             break;
-                        case R.id.nav_lap_ke_hoach:
-                            selectedFragment = new LapKeHoachFragment();
-                            break;
                         case R.id.nav_tai_khoan:
-                            selectedFragment = new TaiKhoanFragment();
+                            selectedFragment = new TaiKhoanFragment(MainActivity.this);
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,
                             selectedFragment).commit();

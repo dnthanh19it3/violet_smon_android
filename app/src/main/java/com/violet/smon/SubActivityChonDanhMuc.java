@@ -28,8 +28,6 @@ public class SubActivityChonDanhMuc extends AppCompatActivity {
         setContentView(R.layout.activity_sub_chon_danh_muc);
         tabThuChi = findViewById(R.id.tab_thuchi);
         // Remove Action bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
         renderThu();
 
         tabThuChi.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

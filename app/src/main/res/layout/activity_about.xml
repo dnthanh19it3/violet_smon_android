@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="50dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_weight="0"
+                app:srcCompat="@drawable/ic_wallet__1_" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="sMon"
+                    android:textSize="32dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trợ lý tài chính của bạn"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="sMon là ứng quản lý chi tiêu hằng ngày cho mọi người. Bạn có thể thêm chi tiêu, xem lại, chỉnh sửa một cách dễ dàng. Bạn có thể theo dõi phân tích các khoản thu chi thông qua mục báo cáo. Hảy trải nghiệm các tính năng hữu ích trên sMon nhé. Cảm ơn bạn đã sử dụng sMon!" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Liên hệ: thanhstp99@gmail.com" />
+    </LinearLayout>
+</RelativeLayout>
